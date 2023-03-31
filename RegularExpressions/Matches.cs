@@ -65,6 +65,24 @@ namespace RegularExpressions
 
             Console.WriteLine($"There are {count} occurrences.");
         }
+        public static void ImageType()
+        {
+            string[] filenames = { "document.txt", "my_image.jpg", "family-photo.png", "music.mp3", "landscape.jpeg" };
+
+            Regex regex = new Regex(@"^[\w,\s-]+\.(jpg|jpeg|png|gif)$");
+
+            foreach (string filename in filenames)
+            {
+                if (regex.IsMatch(filename))
+                {
+                    Console.WriteLine($"{filename} is a valid image file name.");
+                }
+                else
+                {
+                    Console.WriteLine($"{filename} is not a valid image file name.");
+                }
+            }
+        }
     }
 }
 
