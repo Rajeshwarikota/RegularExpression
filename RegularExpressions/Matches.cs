@@ -83,6 +83,24 @@ namespace RegularExpressions
                 }
             }
         }
+        public static void webseriesFormat()
+        {
+            string[] urls = { "https://www.example.com", "https://example.com", "example.com", "www.example.com" };
+
+            Regex regex = new Regex(@"^(https?://)?(www\.)?[\w-]+\.[\w]{2,3}(/[\w-]+)*(\.[\w]{2,3})?$");
+
+            foreach (string url in urls)
+            {
+                if (regex.IsMatch(url))
+                {
+                    Console.WriteLine($"{url} is a valid website address.");
+                }
+                else
+                {
+                    Console.WriteLine($"{url} is not a valid website address.");
+                }
+            }
+        }
     }
 }
 
