@@ -56,6 +56,15 @@ namespace RegularExpressions
                 Console.WriteLine(match.Value);
             }
         }
+        public static void Occurences()
+        {
+            string pattern = "fox(es)?";
+            string input = "foxes are omnivorous mammals belonging to several genera of the family Canidae fox.";
+            Regex regex = new Regex(pattern);
+            int count = regex.Matches(input).Count;
+
+            Console.WriteLine($"There are {count} occurrences.");
+        }
     }
 }
 
